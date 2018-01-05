@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/modulesio/three-model/issues"
   },
-  "homepage": "https://github.com/modulesio/three-model#readme"
+  "homepage": "https://github.com/modulesio/three-model#readme",
+  "dependencies": {
+    "js-untar": "^0.1.5"
+  }
 }
