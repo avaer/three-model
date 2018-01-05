@@ -7,7 +7,7 @@ const THREEGLTFLoaderLib = require('./lib/GLTFLoader.js');
 // const untar = require('js-untar');
 const Zlib = require('./zlib_and_gzip.js');
 
-module.exports = ({THREE}) => {
+module.exports = function({THREE}) {
 
 const THREEOBJLoader = THREEOBJLoaderLib({THREE});
 const THREEMTLLoader = THREEMTLLoaderLib({THREE});
