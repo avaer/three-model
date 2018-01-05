@@ -267,6 +267,15 @@ const requestModel = ({source, type, credentials}) => {
 
                 _subDefaultTextures(model, files);
 
+                model.destroy = () => {
+                  model.traverse(node => {
+                    if (node.isMesh) {
+                      node.geometry.dispose();
+                      node.material.dispose();
+                    }
+                  });
+                };
+
                 return Promise.resolve(model);
               })
               .catch(err => {
