@@ -261,13 +261,13 @@ const requestModel = ({source, type, credentials}) => {
             const modelFileUrl = modelFile.getBlobUrl();
 
             return loader(modelFileUrl)
-              .then(preview => {
+              .then(model => {
                 URL.revokeObjectURL(modelFileUrl);
                 tarLoader.clearFiles(texturePath);
 
-                _subDefaultTextures(preview, files);
+                _subDefaultTextures(model, files);
 
-                return Promise.resolve(preview);
+                return Promise.resolve(model);
               })
               .catch(err => {
                 URL.revokeObjectURL(modelFileUrl);
